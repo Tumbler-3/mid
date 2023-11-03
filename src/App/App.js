@@ -14,6 +14,7 @@ class  App extends Component {
         ],
         side: true
         }
+    user = this.state.side? 'User 1': 'User 2'
 
     addMessage = (text) =>{ // adding new message with setState
       if (text===''){
@@ -47,7 +48,7 @@ class  App extends Component {
       <div className="row row-broken">
         <div className="col-sm-15 col-xs-12">
           <div className="col-inside-lg decor-default">
-          <h6>Mini Chat</h6>
+          {this.state.side? <h6> User 1's Chat</h6> : <h6> User 2's Chat</h6>}
             <div className="chat-body">
               <Message new_msg_history={this.state.msg_history}/>
             </div>
