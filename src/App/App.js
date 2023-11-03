@@ -21,7 +21,8 @@ class  App extends Component {
         return null
       }
       const today = new Date()
-        const newmsg = {ind : this.ind++, text: text, side: this.state.side, date: today.getHours() + ":" + today.getMinutes()}
+      const minute =  today.getMinutes().toString().length===1? '0'+today.getMinutes():today.getMinutes()
+        const newmsg = {ind : this.ind++, text: text, side: this.state.side, date: today.getHours() + ":" + minute}
 
         this.setState(({msg_history}) => {
             const new_msg_history = [
